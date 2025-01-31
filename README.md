@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Compass-projeto-Docker
-=======
-
 # Atividade Docker #PB - NOV 2024 | DevSecOps
 
 Este projeto apresenta uma implementação prática de alta disponibilidade e escalabilidade utilizando AWS. Nele, configuramos um ambiente WordPress com balanceamento de carga, escalabilidade automática e armazenamento persistente. A infraestrutura inclui instâncias EC2 em múltiplas zonas de disponibilidade (AZs), um Application Load Balancer (ALB), um Auto Scaling Group (ASG), um banco de dados gerenciado no Amazon RDS e armazenamento compartilhado via Amazon EFS. O objetivo é garantir uma aplicação resiliente e eficiente, explorando boas práticas de arquitetura na nuvem.
@@ -302,4 +298,3 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 ## Créditos
 Projeto desenvolvido como parte da Atividade Docker para #PB - NOV 2024 | DevSecOps.
 
->>>>>>> 06c0435 (Adicionando arquivos do projeto)
