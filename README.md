@@ -28,7 +28,7 @@ Este projeto apresenta uma implementação prática de alta disponibilidade e es
  5. [Configuração do template EC2](#5-configuração-do-template-ec2)
  6. [Configuração do Load Balancer](#6-configuração-do-load-balancer)
  7. [Configuração do Auto Scaling Group](#7-configuração-do-auto-scaling-group)
- 8. [Teste e Validação](#8-teste-e-validação)
+ 8. [Testes e Validação](#8-testes-e-validação)
 
 ## 1. Configuração da VPC
 #### 1.1 Pesquise por VPC, nas opções à esquerda clique em **Your VPCs**.
