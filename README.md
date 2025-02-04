@@ -55,17 +55,17 @@ Aguarde o estado do seu NAT gateway ficar como **Available** para prosseguir.
 
 #### 1.3 Associe seu NAT gateway nas tabelas de rotas. 
 
-Nas opções à esquerda, clique em **Route Tables**. Identifique as duas subredes privadas criadas pela sua VPC. Clique no ID de cada um vá em Edit routes.
+Nas opções à esquerda, clique em **Route Tables**. Identifique as duas subredes privadas criadas pela sua VPC. Clique no ID de cada um e vá em Edit routes.
 
 1. Add route
 2. Destination: `0.0.0.0/0`
-3. Target: `NAT Gateway` e o id da sua nat gateway
+3. Target: `NAT Gateway` e o id da seu nat gateway
 
 ![Image](https://github.com/user-attachments/assets/0f2b5c7e-429a-42d9-bcdc-5b4170f59dc2)
 
 ## 2. Configuração dos Security Groups
 
-Navegue até EC2 e procure por **Security Groups**. Serão criados 4 security groups no total, para o **EC2**, **Load Balancer**, **EFS** e **RDS**.
+Navegue até EC2 e procure por **Security Groups**. Serão criados 4 security groups no total, um para o **EC2**, **Load Balancer**, **EFS** e **RDS**.
 
 #### 2.1 Security Group EC2: SG-EC2
 
@@ -133,7 +133,7 @@ Navegue até EC2 e procure por **Security Groups**. Serão criados 4 security gr
 2. Escolha um nome para seu EFS: `wp-efs`.
 3. Deixe como `Regional`.
 4. Em **Network**, selecione sua VPC.
-5. Em **Mount targets**, em cada zona de disponibilidade, selecione o `SG-EFS` no **Security groups**.
+5. Em **Mount targets**, para cada zona de disponibilidade, selecione o `SG-EFS` no **Security groups**.
 6. Create.
 
 ![Image](https://github.com/user-attachments/assets/94675508-abe5-4d98-bb40-2d20099c7dc5)
@@ -158,7 +158,7 @@ Navegue até EC2 e procure por **Security Groups**. Serão criados 4 security gr
 ![Image](https://github.com/user-attachments/assets/98cce3f3-28b8-4fb3-8f04-588b11f36b2b)
 
 ## 5. Configuração do template EC2
-#### 5.1Navegue até EC2, nas opções à esquerda, vá em Launch Templates e clique em Create launch template.
+#### 5.1 Navegue até EC2, nas opções à esquerda, vá em Launch Templates e clique em Create launch template.
 
 1. Escolha um nome para o template: `wp-dockerAMI`.
 2. Escolha uma AMI: `Amazon Linux 2 Kernel`.
@@ -268,7 +268,7 @@ Substitua o `fs-xxxxxxxxxxxxxxxxx.efs.us-east-1.amazonaws.com` pelo DNS do seu *
 3. Escolha as **2** subredes privadas da sua **VPC**.
 4. **Attach to an existing load balancer**.
 5. Vincule o grupo de destino criado.
-6. Habilite o health cheks ELB.
+6. Habilite o health checks ELB.
 7. Capacidade desejada: `2`
 8. Capacidade mínima: `2`
 9. Capacidade máxima: `4`
@@ -290,7 +290,7 @@ Substitua o `fs-xxxxxxxxxxxxxxxxx.efs.us-east-1.amazonaws.com` pelo DNS do seu *
 
 ![Image](https://github.com/user-attachments/assets/778b0805-666a-4ae0-9252-5d738765b163)
 ## Conclusão
-Com a conclusão deste projeto, foi possível configurar um ambiente WordPress altamente disponível na AWS, utilizando Load Balancer, Auto Scaling, RDS e EFS para garantir persistência de dados e escalabilidade. A implementação permite que novas instâncias EC2 sejam criadas automaticamente conforme a demanda, garantindo um ambiente robusto e sem pontos únicos de falha. Seguindo essa documentação, você será capaz de replicar essa infraestrutura para hospedar aplicações web escaláveis e resilientes na nuvem.
+Com a conclusão deste projeto, foi possível configurar um ambiente WordPress altamente disponível na AWS, utilizando Load Balancer, Auto Scaling, RDS e EFS para garantir persistência de dados e escalabilidade. A implementação permite que novas instâncias EC2 sejam criadas automaticamente conforme a demanda, garantindo um ambiente robusto. Seguindo essa documentação, você será capaz de replicar essa infraestrutura para hospedar aplicações web escaláveis e resilientes na nuvem.
 
 ## Licença
 Este projeto está licenciado sob a [MIT License](LICENSE).
